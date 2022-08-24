@@ -41,5 +41,6 @@ public class SimplePresentationScreen extends JFrame {
 		tabInformation.setPreferredSize(new Dimension(425, 275));
 		tabbedPane.addTab("Información del alumno", null, tabInformation, "Muestra la información declarada por el alumno");
 		contentPane.add(tabbedPane, BorderLayout.WEST);
+		setVisible(true);
 	}
 }
