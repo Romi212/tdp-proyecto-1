@@ -42,12 +42,9 @@ public class SimplePresentationScreen extends JFrame {
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabInformation = new JPanel();
 		tabInformation.setPreferredSize(new Dimension(425, 275));
-		//URL url = getClass().getResource("tdp.png");
 
-		//BufferedImage myPicture = ImageIO.read(new File(url.toString()));
-		//JLabel LFoto = new JLabel(new ImageIcon(myPicture));
+		//Foto de aiba
 		JLabel LFoto = new JLabel("");
-
 		LFoto.setIcon(new ImageIcon(SimplePresentationScreen.class.getResource(studentData.getPathPhoto())));
 
 
@@ -60,8 +57,8 @@ public class SimplePresentationScreen extends JFrame {
 		JLabel LMail = new JLabel("E-mail");
 		JLabel LGit = new JLabel("Github URL");
 
-
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		//Label que muestra la fecha y hora
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH:mm:ss");
 		JLabel LFecha = new JLabel("Esta ventana fue generada el "+ dtf.format(now)+" a las "+dtf2.format(now));
@@ -134,11 +131,10 @@ public class SimplePresentationScreen extends JFrame {
 		);
 
 
-
+		//Agregamos todos los componentes a sus paneles correspondientes
 		tabbedPane.addTab("Información del alumno", null, tabInformation, "Muestra la información declarada por el alumno");
 		contentPane.add(tabbedPane, BorderLayout.WEST);
 		contentPane.add(LFoto, BorderLayout.EAST);
-		//tabbedPane.add( Lnombre);
 		contentPane.add(LFecha, BorderLayout.SOUTH);
 		setVisible(true);
 	}
